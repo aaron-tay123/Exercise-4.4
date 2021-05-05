@@ -1,0 +1,62 @@
+package Fruit;
+
+public class Apple extends Fruit {
+
+	protected double price;
+	protected int quantity;
+	
+	public Apple(String name, int q, double p) { //constructor with argument
+		super(name);//called method in superclass with passing parameter
+		quantity = q;
+		price = p;
+		
+		//System.out.println("Apple constructor is invoked");
+		
+	if(quantity < 10) {
+	   Totalprice(); //overloading with no arguments
+	   System.out.println(name);
+	   System.out.println("If the quantity LESS than 10, Total price: RM" + Totalprice());
+  
+	}
+	else if (quantity > 10 && quantity < 100) {
+		double pr = 2.99; // beli lebi dari 10 tapi kurang dari 100, harga 1.99
+		Totalprice(pr); //overloading with 1 argument
+		System.out.println(name);
+		System.out.println("If the quantity MORE than 10, Total price: RM" + Totalprice(pr));
+	}
+	
+		else {
+		double pr = 1.99; //beli lebih drp 100, harga menjadi 0.99
+		double dd = 0.1; //beli byk lebih daripada 100, ada diskaun 10%
+		Totalprice(dd, pr); //overloading with 2 arguments
+		System.out.println(name);
+		System.out.println("If the quantity MORE than 100, Total price: RM" + Totalprice(dd,pr));
+	}
+	
+}
+
+       public double Totalprice() {
+	      return this.price *quantity;
+	
+     }
+
+      public double Totalprice(double pr) {
+	      return pr *quantity;
+     }
+
+      public double Totalprice(double dd, double pr) {
+	      return (pr * quantity) * dd;
+     }
+
+      public String printInfo() {
+  		return "Apple is a type of fruit.";
+  	}
+  	
+  	public String toString() { //overriding method
+  		return super.toString()
+  				+ "\n" + printInfo()
+  				+"\nPrice: RM" + price 
+  				+ "\nQuantity: " + quantity + "units";
+    }
+}
+
