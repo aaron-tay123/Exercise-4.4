@@ -1,0 +1,40 @@
+package Fruit;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+	        //Fruit f = new Fruit("Orange"); //no need new object for super class
+	
+			System.out.println();
+			
+			System.out.println("---------------Apple---------------");
+			Apple a = new Apple("Apple", 50, 2.99); //new object for sub class
+			System.out.println(a);
+			System.out.println("");
+				
+			System.out.println("---------------Orange---------------");
+			Orange O = new Orange("Orange", "orange", 10, 5, 50);
+			System.out.println(O);
+			System.out.println("");
+				
+			System.out.println("---------------GreenApple---------------");
+			GreenApple G = new GreenApple("Green Apple", 5, 6.99, "Good", true);
+			System.out.println(G);
+			System.out.println("");
+				
+			System.out.println("---------------Banana---------------");
+			Banana B = new Banana("Banana",'Y', 6, 5, 'L');
+			System.out.println(B);
+			System.out.println("");
+				
+			System.out.println("---------------RedApple---------------");
+			RedApple R = new RedApple("Red Apple", 6, 3.99, 6, "Red");
+			System.out.println(R);
+			System.out.println("Colour: " + R.colour());
+			System.out.println("Units per one pack: " + R.packRedApple() + " units");
+			System.out.println("Price per pack: RM" + R.calPrice());
+			System.out.println("");
+
+ }
+}
