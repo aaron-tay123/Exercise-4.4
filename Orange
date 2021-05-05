@@ -1,0 +1,72 @@
+package Fruit;
+
+public class Orange extends Fruit{
+
+	private String color;
+	private int discount;
+	private int price;
+	private int quantity;
+	
+
+	public Orange(String name, String c, int d, int p, int q) { //constructor with argument
+		super(name);//called method in superclass with passing parameter
+		color=c;
+		discount = d;
+		price=p;
+	    quantity=q;
+	    
+	   //System.out.println("Orange constructor is invoked");
+	
+	    if(quantity==50) {
+	    Totalcalories();
+	    System.out.println("If the quantity of the orange is equal to 50, the total calories will be " + Totalcalories() + " calories");
+	    }
+	    
+	    else if(quantity>50 && quantity<100) {
+	    int qq = 60;
+	    Totalcalories(qq);
+	    System.out.println("If the quantity of the orange is between 50 and 100, the total calories will be " + Totalcalories(qq) + "calories");
+	    }
+	    
+	    else {
+	    int qq = 150;
+	    int ca = 60;
+	    Totalcalories(qq, ca);
+	    System.out.println("If the quantity of the orange is more than 100, the total calories will be " + Totalcalories(qq,ca) + "calories");
+	    }
+	}
+	public String Color() {
+		return color;
+	}
+	public int Discount() {
+		return discount;
+	}
+	public int getTotalprice() { 
+		return price*quantity;
+	}
+	
+	public int Totalcalories() { //method for overloading without parameter
+		return 60* quantity;
+	}
+	
+	public int Totalcalories(int qq) {//method for overloading with 1 parameter
+		return 60*qq;
+	}
+	
+	public int Totalcalories(int qq, int ca) { //method for overloading with 2 parameter
+		return qq*ca;
+	}
+	
+	public int FinalPrice() {
+		return getTotalprice()-(getTotalprice()*Discount()/100);
+	}
+	
+	public String toString() { //overriding method
+		return "Color: " + color + 
+				"\nDiscount: " + discount + "%" +
+				"\nTotal Price before discount: RM" + getTotalprice() +
+				"\nFinal Price: RM" + FinalPrice();
+				
+	}
+
+}
