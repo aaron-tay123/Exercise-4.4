@@ -1,0 +1,64 @@
+package Fruit;
+
+public class Banana extends Fruit{
+
+	private char vitA;
+	private int price;
+	private int quantity;
+	private char size;
+	
+
+	public Banana(String name, char vA, int p, int q, char s) { //constructor with argument
+		super(name);//called method in superclass with passing parameter
+		vitA=vA;
+		price=p;
+		quantity=q;
+		
+		System.out.println("Banana constructor is invoked");
+		
+	
+		
+	if(size=='S') {
+	  Price(); //overloading with no argument
+	  System.out.println("If the size of banana is small, the price will be RM" + Price());
+	  
+	}
+	
+	else if (size=='M') {
+	  double pr = 5.99;
+	  Price(pr);
+	  System.out.println("If the size of banana is medium, the price will be RM" + Price(pr));
+	}
+	
+	else {
+	  double pr = 6.99;
+	  Price(pr);
+	  System.out.println("If the size of banana is large, the price will be RM" + Price(pr));
+		
+	}
+}
+	public char VitA() {
+		return vitA;
+	}
+	
+	public double Price() {
+		return price;
+	}
+	
+	public double Price(double pr) {
+		return pr;
+	}
+	
+	public int Quantity() {
+		return quantity;
+	}
+	
+	public String toString() {
+		return super.toString()
+				+"\nDoes banana has vitamin A (Y/N): " + vitA
+				+"\nPrice: RM" + price
+				+"\nQuantity: " + quantity + "units";
+				
+	}
+	
+}
